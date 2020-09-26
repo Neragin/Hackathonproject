@@ -1,11 +1,13 @@
 body { 
     font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
     font-weight: normal;
-    background-image: url("images/background.png"); 
     background-position: right top;
     background-repeat: no-repeat;
     background-size: cover; 
   } 
+  .background {
+    background-image: url("images/background.png"); 
+  }
   h1 {
     font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
     font-weight: normal;
