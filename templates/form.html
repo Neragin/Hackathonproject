@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+<link rel="stylesheet" href="{{ url_for('static',    filename='css/style.css') }}">
+</head>
+<body>
+<h1>Our form will be here!</h1>
+<form method="POST" action="{{ url_for('form') }}">
+    {{ form.csrf_token }}
+    {{ form.age.label }}
+    {{ form.age }}
+    {{ form.zipcode.label }}
+    {{ form.zipcode }}
+    <input type="submit" value="Submit">
+</body>
+</html>
