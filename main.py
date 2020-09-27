@@ -1,30 +1,56 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, url_for, request
 from flask_wtf import FlaskForm
-from  wtforms import StringField, PasswordField
+from werkzeug.utils import redirect
+from wtforms import StringField, PasswordField, RadioField, TextField, validators
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'thisismysecretkey'
+app.config['SECRET_KEY'] = 'Thisisasecret!'
 
-class getInfo(FlaskForm):
+
+class LoginForm(FlaskForm):
     age = StringField('age')
-    zipcode = StringField('zipcode')
+    state = StringField('state')
 
-@app.route("/")
-def home():
-    return render_template("index.html")
 
-@app.route("/form", methods=['GET', 'POST'])
+class testing(FlaskForm):
+    q11 = TextField('Playing videogames/watching TV', validators=[validators.DataRequired()])
+    q12 = TextField('Hiking/Biking', validators=[validators.DataRequired()])
+    
+    @app.route('/quiz', methods=['GET', 'POST'])
+    def home():
+        form = testing(request.form)
+
+        print(form.errors)
+        if request.method == 'POST':
+            print(request.form)
+            q11 = request.form['Playing videogames/watching TV']
+            print("", q11)
+        return render_template("quiz.html")
+
+
+
+
+
+# @app.route("/")
+# def home():
+#    return render_template("index.html")
+
+
+# @app.route("/quiz")
+# def home():
+#    return render_template("quiz.html")
+
+
+@app.route('/form', methods=['GET', 'POST'])
 def form():
-    form = getInfo()
+    form = LoginForm()
 
     if form.validate_on_submit():
-        passedage = int(form.age.data)
-        passedzipcode = int(form.zipcode.data)
-        print(passedage, passedzipcode)
-        return '<h1>The age is {}, and the zipcode is {}.'.format(passedage, passedzipcode)
-    return render_template("form.html", form = form)
-@app.route('/css/<path:path>')
-def css(path):
-    return send_from_directory('static/css',path)
-if __name__ == "__main__":
+        age = form.age.data
+        state = form.state.data
+        return redirect(url_for('home'))
+    return render_template('form.html', form=form)
+
+
+if __name__ == '__main__':
     app.run(debug=True)
