@@ -10,77 +10,77 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
-    <style>
-      html, body {
-      min-height: 100%;
-      padding: 0;
-      margin: 0;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      }
-      p {
-      margin: 0 0 5px;
-      }
-      .main-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 50vh;
-      background: #1c7bc9;
-      }
-      form {
-      height:700px;
-      width:80% !important;
-      margin: 0px 25px 25px 25px;
-      box-shadow: 0 2px 5px #f5f5f5;
-      background: #fff;
-      padding: 75px;
-      }
-      input, textarea {
-      width: calc(100% - 18px);
-      padding: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #1c87c9;
-      outline: none;
-      }
-      input::placeholder {
-      color: #666;
-      }
-      button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      background: #1c87c9;
-      font-size: 16px;
-      font-weight: 400;
-      color: #fff;
-      }
-      button:hover {
-      background: #2371a0;
-      }
-      @media (min-width: 568px) {
-      .main-block {
-      flex-direction: row;
-      }
-      .left-part, form {
-      width: 50%;
-      }
-      .fa-envelope {
-      margin-top: 0;
-      margin-left: 20%;
-      }
-      .fa-at {
-      margin-top: -10%;
-      margin-left: 65%;
-      }
-      .fa-mail-bulk {
-      margin-top: 2%;
-      margin-left: 28%;
-      }
-      }
-    </style>
+  <style>
+    html, body {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    }
+    p {
+    margin: 0 0 5px;
+    }
+    .main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: #1c7bc9;
+    }
+    form {
+    height:700px;
+    width:80% !important;
+    margin: 0px 25px 25px 25px;
+    box-shadow: 0 2px 5px #f5f5f5; 
+    background: #fff;
+    padding: 75px;
+    }
+    input, textarea {
+    width: calc(100% - 18px);
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #1c87c9;
+    outline: none;
+    }
+    input::placeholder {
+    color: #666;
+    }
+    button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #1c87c9; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    }
+    button:hover {
+    background: #2371a0;
+    }    
+    @media (min-width: 568px) {
+    .main-block {
+    flex-direction: row;
+    }
+    .left-part, form {
+    width: 50%;
+    }
+    .fa-envelope {
+    margin-top: 0;
+    margin-left: 20%;
+    }
+    .fa-at {
+    margin-top: -10%;
+    margin-left: 65%;
+    }
+    .fa-mail-bulk {
+    margin-top: 2%;
+    margin-left: 28%;
+    }
+    }
+  </style>
   </head>
   <body style = "background-color: #1c7bc9;">
     <div style = "background-color:transparent;">
@@ -88,24 +88,30 @@
 
 
 
-<li><a href="index.html" type="submit" value="submit">Home</a></li>
+  <li><a href="index.html" type="submit" value="submit">Home</a></li>
 
-<li><a href="form.html" type="submit" value="submit">Input</a></li>
-
-<li><a href="quiz.html" type="submit" value="submit">Activities</a></li>
-
-<li><a href="result.html" type="submit" value="submit">Results</a></li>
+  <li><a href="form.html" type="submit" value="submit">Input</a><img src="static/images/logo.png" alt="Covidmatic" width="auto" height="60px" style="float: right;padding-right: 40px;"></li>
+  
+  <li><a href="quiz.html" type="submit" value="submit">Activities</a></li>
+  
+  <li><a href="result.html" type="submit" value="submit">Results</a></li>
 
 </ul>
 </div>
-        <h2>Start finding safe activities to do!</h2>
-          <form method="POST" action="/form">
-          {{ form.csrf_token }}
-          {{ form.age.label }}
-          {{ form.age }}
-          {{ form.state.label }}
-          {{ form.state}}
-            <button type="submit" value="Submit"/>
-        </form>
-  </body>
+<div id="header"></div> 
+<div class="main-block">
+  <form action="/" style = "background-color: #fff;">
+    <h2>Start finding safe activities to do!</h2>
+    <div>
+      <form method="POST" action="{{ url_for('form') }}">
+      {{ form.csrf_token }}
+      {{ form.age.label }}
+      {{ form.age }}
+      {{ form.zipcode.label }}
+      {{ form.zipcode }}
+      <button type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</body>
 </html>

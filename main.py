@@ -17,7 +17,7 @@ class testing(FlaskForm):
     q12 = TextField('Hiking/Biking', validators=[validators.DataRequired()])
     
     @app.route('/quiz', methods=['GET', 'POST'])
-    def home():
+    def quiz():
         form = testing(request.form)
 
         print(form.errors)
@@ -31,9 +31,9 @@ class testing(FlaskForm):
 
 
 
-# @app.route("/")
-# def home():
-#    return render_template("index.html")
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 
 # @app.route("/quiz")
