@@ -77,5 +77,8 @@ def getStatePopulation(state):
     }
     if state in list(thisdict): #if state in dict
         print(thisdict[state])
+    else:
+        print("hey, you sure you typed the state currectly? It has to be capitalized! ex: North Dakota")
+
 getStatePopulation('California')
 
