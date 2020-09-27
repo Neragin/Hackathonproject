@@ -56,19 +56,19 @@ a:link {
   color: white !important;
   text-decoration: none !important;
 }
-
+ 
 /* visited link */
 a:visited {
   color: white !important;
   text-decoration: none !important;
 }
-
+ 
 /* mouse over link */
 a:hover {
   color: #d1dced !important;
   text-decoration: underline !important;
 }
-
+ 
 /* selected link */
 a:active {
   color: #919fb5 !important;
@@ -102,11 +102,11 @@ a:active {
     background: #919fb5;
     box-shadow: none;
 }
-
+ 
 .btn-lg.round {
-	border-radius: 10px;
+  border-radius: 10px;
 }
-
+ 
 .choice {
   display: inline !important;
   font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
@@ -114,7 +114,7 @@ a:active {
   color: #1c7bc9;
   font-weight: normal;
 }
-
+ 
 .choicedot {
   display: inline !important;
   font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
