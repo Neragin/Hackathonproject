@@ -2,14 +2,28 @@
 <html>
 
 <head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>repl.it</title>
-    <link rel="stylesheet" href="static/css/style.css">
+	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<center>
 <body style = "background-color:#1c7bc9;">
-  <div style = "background-color:transparent;">
+<div style = "background-color:transparent;">
+<style>
+  .whitebox {
+  height:700px;
+  width:80% !important;
+  margin: 0px 25px 25px 25px !important;
+  box-shadow: 0 2px 5px #f5f5f5; 
+  background: #fff;
+  padding: 75px;
+  }
+</style>
 <ul>
 
 
@@ -24,88 +38,78 @@
 
 </ul>
 </div>
-<script>
-$(document).ready(function(){
-  $(".choice1").click(function(){
-    $("#hideable1").hide();
-    $("#hideable11").hide();
-    $("#hideable111").hide();
-    $("#hideable1111").hide();
-    $("#hideable11111").hide();
-  });
-  $(".choice2").click(function(){
-    $("#hideable2").hide();
-    $("#hideable22").hide();
-    $("#hideable222").hide();
-    $("#hideable2222").hide();
-    $("#hideable22222").hide();
-  });
-  $(".choice3").click(function(){
-    $("#hideable3").hide();
-    $("#hideable33").hide();
-    $("#hideable333").hide();
-    $("#hideable3333").hide();
-    $("#hideable33333").hide();
-  });
-  $(".choice4").click(function(){
-    $("#hideable4").hide();
-    $("#hideable44").hide();
-    $("#hideable444").hide();
-    $("#hideable4444").hide();
-    $("#hideable44444").hide();
-  });
-  $(".choice5").click(function(){
-    $("#hideable5").hide();
-    $("#hideable55").hide();
-    $("#hideable555").hide();
-    $("#hideable5555").hide();
-    $("#hideable55555").hide();
-  });
-});
-</script>
+<center>
+<div class="whitebox container">
+  <h2 style="margin-bottom: 20px;">Questions</h2>
+  <div class="row" style="padding-top:20px;">
+	<form action="/action_page.php">
+  <div class="col-sm-4" >
+  <p>What do you do with your time off?:</p>
+  <input type="radio" id="q1.1" name="time" value="intro">
+  <label for="intro" class="choice">Playing videogames/watching TV</label><br>
+  <input type="radio" id="q1.2" name="time" value="TB">
+  <label for="TB" class="choice">Hiking/Biking</label><br>
+  <input type="radio" id="q1.3" name="time" value="extro">
+  <label for="extro" class="choice">Hanging out with friends</label><br>
+  <input type="radio" id="q1.4" name="time" value="DIY">
+  <label for="DIY" class="choice">Making something/gardening</label><br>
 
-	  <p id="hideable1">What do you do with time off?</p>
-	  <button  id="hideable11" onclick="addPerson1()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Playing Videogames/Watching TV</button>
-    <button  id="hideable111" onclick="addPerson2()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Hiking/Biking</button>
-    <button  id="hideable1111" onclick="addPerson3()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Hanging out with friends</button>
-    <button  id="hideable11111" onclick="addPerson4()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Making something/gardening</button>
-    <br>
-    <br>
+  </div>
+<div class="col-sm-4">
+  <p>What are you known for? change this one u need to know about what they like this one is too buzzfeed-like:</p>
+  <input type="radio" id="q2.1" name="known" value="intro" class="choicedot">
+  <label for="intro" class="choice">Being Intelligent</label><br>
+  <input type="radio" id="q2.2" name="known" value="TB" class="choicedot">
+  <label for="TB" class="choice">Physical Capability</label><br>  
+  <input type="radio" id="q2.3" name="known" value="extro" class="choicedot">
+  <label for="extro" class="choice">Being Funny</label><br>
+  <input type="radio" id="q2.4" name="known" value="DIY" class="choicedot">
+  <label for="DIY" class="choice">Creativity</label><br>
 
-    <p id="hideable2">What are you known for?</p>
-    <button  id="hideable22" onclick="addPerson1()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Being Intelligent</button>
-    <button  id="hideable222" onclick="addPerson2()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Physical Capability</button>
-    <button  id="hideable2222" onclick="addPerson3()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Being Funny</button>
-    <button  id="hideable22222" onclick="addPerson4()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Creativity</button>
-    <br>
-    <br>
-    
-    <p id="hideable3">What do you hate doing?</p>
-    <button  id="hidable33" onclick="addPerson1()" class="btn btn-primary btn-lg round choise3" style="font-size:12px !important;letter-spacing: 0px !important;">Social Gatherings</button>
-    <button  id="hidable333" onclick="addPerson2()" class="btn btn-primary btn-lg round choise3" style="font-size:12px !important;letter-spacing: 0px !important;">Sitting Idle</button>
-    <button  id="hidable3333" onclick="addPerson3()" class="btn btn-primary btn-lg round choise3" style="font-size:12px !important;letter-spacing: 0px !important;">Being Alone</button>
-    <button  id="hidable33333" onclick="addPerson4()" class="btn btn-primary btn-lg round choise3" style="font-size:12px !important;letter-spacing: 0px !important;">Not Having anything to do</button>
-    <br>
-    <br>
+  </div>
+  <div class="col-sm-4">
+  <p>What do you hate doing?:</p>
+  <input type="radio" id="q3.1" name="hate" value="intro" class="choicedot">
+  <label for="intro" class="choice">Social Gatherings</label><br>
+  <input type="radio" id="q3.2" name="hate" value="TB" class="choicedot">
+  <label for="TB" class="choice">Sitting Idle</label><br>  
+  <input type="radio" id="q3.3" name="hate" value="extro" class="choicedot">
+  <label for="extro" class="choice">Being Alone</label><br>
+  <input type="radio" id="q3.4" name="hate" value="DIY" class="choicedot">
+  <label for="DIY" class="choice">Not having anyhting to do</label><br>
 
-    <p id="hidable4">How would you use your time in lock down?</p>
-    <button  id="hidable44" onclick="addPerson1()" class="btn btn-primary btn-lg round choise4" style="font-size:12px !important;letter-spacing: 0px !important;">read a book/watch tv by yourself</button>
-    <button  id="hidable444" onclick="addPerson2()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Improve/learn a new skill</button>
-    <button  id="hidable4444" onclick="addPerson3()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Talk /meet new people (safely)</button>
-    <button  id="hidable44444" onclick="addPerson4()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Create something</button>
-    <br>
-    <br>
-
-    <p id="hidable5">What did you enjoy about lock-down?</p>
-    <button  id="hidable55" onclick="addPerson1()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having lots of time alone</button>
-    <button  id="hidable555" onclick="addPerson2()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having extra time to </button>
-    <button  id="hidable5555" onclick="addPerson3()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Calling and talking to friends</button>
-    <button  id="hidable55555" onclick="addPerson4()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having time to work on projects</button>
-    <br>
-    <br>
-     
+  </div>
+ </div>
+ <div class="row" style="padding-top:60px;">
+   <div class="col-sm-6">
+  <p>How would you use your time in lock down?:</p>
+  <input type="radio" id="q2.1" name="ld" value="intro" class="choicedot">
+  <label for="intro" class="choice">read a book/watch tv by yourself</label><br>
+  <input type="radio" id="q2.2" name="ld" value="TB" class="choicedot">
+  <label for="TB" class="choice">Improve/learn a new skill</label><br>  
+  <input type="radio" id="q2.3" name="ld" value="extro" class="choicedot">
+  <label for="extro" class="choice">Talk /meet new people (safely)</label><br>
+  <input type="radio" id="q2.4" name="ld" value="DIY" class="choicedot">
+  <label for="DIY" class="choice">Create something</label><br>
+  
+  </div>
+  <div class="col-sm-6">
+  <p>What did you enjoy about lock-down?:</p>
+  <input type="radio" id="q2.1" name="enjoy" value="intro" class="choicedot">
+  <label for="age1" class="choice">Having lots of time alone</label><br>
+  <input type="radio" id="q2.2" name="enjoy" value="TB" class="choicedot">
+  <label for="age2" class="choice">Having extra time to exercise</label><br>  
+  <input type="radio" id="q2.3" name="enjoy" value="extro" class="choicedot">
+  <label for="age3" class="choice">Calling and talking to friends</label><br>
+  <input type="radio" id="q2.4" name="enjoy" value="DIY" class="choicedot">
+  <label for="age3" class="choice">Having time to work on projects</label><br><br>
+  <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
+</div>
+</center>
     <p></p>
     <script src="script.js"></script>
   </body>
-</center>
 </html>

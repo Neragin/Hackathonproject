@@ -26,7 +26,7 @@ ul {
   line-height: 150%;
   font-size: 16px;
   font-weight: normal;
-  margin-top: 40px;
+  margin-top: 40px !important;
 }
 .footer {
   padding-top: 40px;
@@ -105,4 +105,20 @@ a:active {
 
 .btn-lg.round {
 	border-radius: 10px;
+}
+
+.choice {
+  display: inline !important;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+  font-size: 20px;
+  color: #1c7bc9;
+  font-weight: normal;
+}
+
+.choicedot {
+  display: inline !important;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+  font-size: 20px;
+  color: #1c7bc9;
+  font-weight: normal;
 }
