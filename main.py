@@ -36,9 +36,16 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/openForm/", methods=['GET', 'POST'])
+# that wont help
+def openForm():
+    print("opened form thing")
+    return redirect(url_for('form'))
+
 # @app.route("/quiz")
 # def home():
 #    return render_template("quiz.html")
+#gimme a sec
 
 
 @app.route('/form', methods=['GET', 'POST'])
