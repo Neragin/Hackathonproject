@@ -20,7 +20,7 @@ def getCovid():
     print(ls[2])
 getCovid()
 
-def getStatePopulation():
+def getStatePopulation(state):
     url = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
     res = requests.get(url)
     data = res.json()

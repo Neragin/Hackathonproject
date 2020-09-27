@@ -88,13 +88,13 @@
 
 
 
-  <li><a href="index.html" type="submit" value="submit">Home</a></li>
+<!--  <li><a href="index.html" type="submit" value="submit">Home</a></li>-->
 
-  <li><a href="form.html" type="submit" value="submit">Form</a><img src="static/images/logo.png" alt="Covidmatic" width="auto" height="60px" style="float: right;padding-right: 40px;"></li>
+<!--  <li><a href="form.html" type="submit" value="submit">Form</a><img src="static/images/logo.png" alt="Covidmatic" width="auto" height="60px" style="float: right;padding-right: 40px;"></li>-->
   
-  <li><a href="quiz.html" type="submit" value="submit">Quiz</a></li>
-  
-  <li><a href="result.html" type="submit" value="submit">Data</a></li>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+
+    <li><a href="{{ url_for('form') }}">Form</a></li><img src="static/images/logo.png" alt="Covidmatic" width="auto" height="60px" style="float: right;padding-right: 40px;"></li>
 
 </ul>
 </div>
