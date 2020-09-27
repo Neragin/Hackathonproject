@@ -53,26 +53,26 @@ pp {
 }
 /* unvisited link */
 a:link {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 /* visited link */
 a:visited {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 /* mouse over link */
 a:hover {
-  color: #d1dced;
-  text-decoration: underline;
+  color: #d1dced !important;
+  text-decoration: underline !important;
 }
 
 /* selected link */
 a:active {
-  color: #919fb5;
-  text-decoration: underline;
+  color: #919fb5 !important;
+  text-decoration: underline !important;
 }
 .btn {
     padding: 14px 24px;
