@@ -25,6 +25,6 @@ def form():
     return render_template("form.html", form = form)
 @app.route('/css/<path:path>')
 def css(path):
-    return send_from_directory('templates/css',path)
+    return send_from_directory('static/css',path)
 if __name__ == "__main__":
     app.run(debug=True)

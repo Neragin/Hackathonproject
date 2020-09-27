@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<center>
+<body>
+<script>
+$(document).ready(function(){
+  $(".choice1").click(function(){
+    $("#hideable1").hide();
+    $("#hideable11").hide();
+    $("#hideable111").hide();
+    $("#hideable1111").hide();
+    $("#hideable11111").hide();
+  });
+  $(".choice2").click(function(){
+    $("#hideable2").hide();
+    $("#hideable22").hide();
+    $("#hideable222").hide();
+    $("#hideable2222").hide();
+    $("#hideable22222").hide();
+  });
+});
+</script>
+
+	<p id="hideable1">What do you do with time off?</p>
+	<button id="hideable11" onclick="addPerson1()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Playing Videogames/Watching TV</button>
+    <button  id="hideable111" onclick="addPerson2()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Hiking/Biking</button>
+    <button  id="hideable1111" onclick="addPerson3()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Hanging out with friends</button>
+    <button  id="hideable11111" onclick="addPerson4()" class="btn btn-primary btn-lg round choice1" style="font-size:12px !important;letter-spacing: 0px !important;">Making something/gardening</button>
+    <br>
+    <br>
+
+        <p id="hideable2">What are you known for?</p>
+    <button  id="hideable22" onclick="addPerson1()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Being Intelligent</button>
+    <button  id="hideable222" onclick="addPerson2()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Physical Capability</button>
+    <button  id="hideable2222" onclick="addPerson3()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Being Funny</button>
+    <button  id="hideable22222" onclick="addPerson4()" class="btn btn-primary btn-lg round choice2" style="font-size:12px !important;letter-spacing: 0px !important;">Creativity</button>
+    <br>
+    <br>
+    
+        <p>What do you hate doing?</p>
+    <button onclick="addPerson1()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Social Gatherings</button>
+    <button onclick="addPerson2()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Sitting Idle</button>
+    <button onclick="addPerson3()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Being Alone</button>
+    <button onclick="addPerson4()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Not Having anything to do</button>
+    <br>
+    <br>
+
+            <p>How would you use your time in lock down?</p>
+    <button onclick="addPerson1()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">read a book/watch tv by yourself</button>
+    <button onclick="addPerson2()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Improve/learn a new skill</button>
+    <button onclick="addPerson3()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Talk /meet new people (safely)</button>
+    <button onclick="addPerson4()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Create something</button>
+    <br>
+    <br>
+
+            <p>What did you enjoy about lock-down?</p>
+    <button onclick="addPerson1()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having lots of time alone</button>
+    <button onclick="addPerson2()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having extra time to </button>
+    <button onclick="addPerson3()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Calling and talking to friends</button>
+    <button onclick="addPerson4()" class="btn btn-primary btn-lg round" style="font-size:12px !important;letter-spacing: 0px !important;">Having time to work on projects</button>
+    <br>
+    <br>
+     
+    <p></p>
+    <script src="script.js"></script>
+  </body>
+</center>
+</html>
