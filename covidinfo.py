@@ -16,3 +16,4 @@ def getCovid():
     print(ls[0])
     print(ls[1])
     print(ls[2])
+getCovid()
