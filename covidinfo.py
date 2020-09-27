@@ -18,7 +18,7 @@ def getCovid():
     print(ls[0])
     print(ls[1])
     print(ls[2])
-getCovid()
+#getCovid()
 
 def getStatePopulation(state):
     url = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
@@ -75,4 +75,7 @@ def getStatePopulation(state):
         "Wisconsin": "48",
         "Wyoming": "49",
     }
+    if state in list(thisdict): #if state in dict
+        print(thisdict[state])
+getStatePopulation('California')
 

@@ -58,6 +58,10 @@ def form():
         return redirect(url_for('home'))
     return render_template('form.html', form=form)
 
+@app.route('/data')
+def data():
+    return render_template('data.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
