@@ -25,11 +25,11 @@ def getStatePopulation(state):
     res = requests.get(url)
     data = res.json()
     thisdict = {
-        "Alabama": "0:"",
-        "Arizona": "1:"",
-        "Arkansas": "2:"",
-        "California": "3:"",
-        "Colorado": "4:"",
+        "Alabama": "0",
+        "Arizona": "1",
+        "Arkansas": "2",
+        "California": "3",
+        "Colorado": "4",
         "5": "Connecticut",
         "6": "Delaware",
         "7": "Florida",
