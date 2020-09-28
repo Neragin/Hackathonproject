@@ -1,29 +1,95 @@
 from urllib.request import urlopen
+
 import requests
-import json
-def getCovid():
-    html = urlopen("http://coronavirusapi.com/getTimeSeries/CA")
+
+
+def getCovid(state):
+    us_state_abbrev = {
+        'Alabama': 'AL',
+        'Alaska': 'AK',
+        'American Samoa': 'AS',
+        'Arizona': 'AZ',
+        'Arkansas': 'AR',
+        'California': 'CA',
+        'Colorado': 'CO',
+        'Connecticut': 'CT',
+        'Delaware': 'DE',
+        'District of Columbia': 'DC',
+        'Florida': 'FL',
+        'Georgia': 'GA',
+        'Guam': 'GU',
+        'Hawaii': 'HI',
+        'Idaho': 'ID',
+        'Illinois': 'IL',
+        'Indiana': 'IN',
+        'Iowa': 'IA',
+        'Kansas': 'KS',
+        'Kentucky': 'KY',
+        'Louisiana': 'LA',
+        'Maine': 'ME',
+        'Maryland': 'MD',
+        'Massachusetts': 'MA',
+        'Michigan': 'MI',
+        'Minnesota': 'MN',
+        'Mississippi': 'MS',
+        'Missouri': 'MO',
+        'Montana': 'MT',
+        'Nebraska': 'NE',
+        'Nevada': 'NV',
+        'New Hampshire': 'NH',
+        'New Jersey': 'NJ',
+        'New Mexico': 'NM',
+        'New York': 'NY',
+        'North Carolina': 'NC',
+        'North Dakota': 'ND',
+        'Northern Mariana Islands': 'MP',
+        'Ohio': 'OH',
+        'Oklahoma': 'OK',
+        'Oregon': 'OR',
+        'Pennsylvania': 'PA',
+        'Puerto Rico': 'PR',
+        'Rhode Island': 'RI',
+        'South Carolina': 'SC',
+        'South Dakota': 'SD',
+        'Tennessee': 'TN',
+        'Texas': 'TX',
+        'Utah': 'UT',
+        'Vermont': 'VT',
+        'Virgin Islands': 'VI',
+        'Virginia': 'VA',
+        'Washington': 'WA',
+        'West Virginia': 'WV',
+        'Wisconsin': 'WI',
+        'Wyoming': 'WY'
+    }
+    if state in us_state_abbrev:
+        state = us_state_abbrev[state]
+        print(state)
+    print("afadjfkjalfajfasl")
+    html = urlopen(f"http://coronavirusapi.com/getTimeSeries/{state}")
     stuff = html.read()
     # print (stuff.split("\n")[-12:])
     encoding = 'utf-8'
     stuff = stuff.decode('utf-8')
-    print (type(stuff))
+    print(type(stuff))
     ls = []
-    niranjan = str(stuff).replace("\\n","break").replace(",","break")
+    niranjan = str(stuff).replace("\\\\n", "break").replace(",", "break")
     for x in niranjan.split("break")[-4:]:
         try:
             ls.append(int(x))
         except ValueError:
             pass
-    print(ls[0])
-    print(ls[1])
-    print(ls[2])
-#getCovid()
+    infected = ls[1]
+    return infected
+
+
 
 def getStatePopulation(state):
     url = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
     res = requests.get(url)
     data = res.json()
+
+
     thisdict = {
         "Alabama": "0",
         "Arizona": "1",
@@ -75,10 +141,19 @@ def getStatePopulation(state):
         "Wisconsin": "48",
         "Wyoming": "49",
     }
-    if state in list(thisdict): #if state in dict
-        print(thisdict[state])
+    if state in list(thisdict):  # if state in dict
+        c = "huh"
+        a = int(thisdict[state])
+        #c = data['data'][str(a)]['Population']
+        for d in data["data"]:
+            if d["State"] == state:
+                try:
+                    c = d["Population"]
+                    break
+                except:
+                    print("bruh")
+
+        return c
     else:
         print("hey, you sure you typed the state currectly? It has to be capitalized! ex: North Dakota")
-
-getStatePopulation('California')
 
